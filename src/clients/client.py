@@ -1,9 +1,6 @@
 import pycurl, json, io
-import array as arr
 
-#searchImage = input("Input image URL: ")
-searchImage = "https://icdn2.digitaltrends.com/image/digitaltrends/galaxy-s10-plus-review-feat-768x479-c.jpg"
-data = json.dumps({"image_url": searchImage})
+data = json.dumps({"image_url": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-20191113-og?wid=1200&hei=630&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1573599067633"})
 url = 'http://localhost/search'
 
 storage = io.BytesIO()
@@ -20,14 +17,5 @@ c.close()
 
 returned_json = json.loads(storage.getvalue())
 
-images = []
-descriptions = []
-
-for image in returned_json['links']:
-    images.append(image)
-
-for description in returned_json['links']:
-    descriptions.append(description)
-
-print(images)    
+##Retrieve links to similar images
 print(json.dumps(returned_json,indent=4))

@@ -12,7 +12,7 @@ except ImportError:
 from bs4 import BeautifulSoup
 if python3:
     import certifi
-from googlecloudapi import getCloudAPIDetails, saveImage
+from .googlecloudapi import getCloudAPIDetails, saveImage
 
 SEARCH_URL = 'https://www.google.com/searchbyimage?hl=en-US&image_url='
 
